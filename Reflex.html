@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Quantum Reflex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="mainMenu">
+        <h1>Quantum Reflex</h1>
+        <button class="menu-btn" onclick="prepareMatch('solo')">Solo Mode</button>
+        <button class="menu-btn btn-danger" onclick="prepareMatch('vs')">Network VS</button>
+    </div>
+
+    <div id="gameContainer">
+        <div id="hudTop">
+            <div>BEST: <span id="highScoreHUD" class="high-score-val">0</span></div>
+            <div>RANK: <span id="rankHUD" class="rank-val">ROOKIE</span></div>
+        </div>
+        <div id="hud">
+            <div id="hudP1" class="hud-primary">PTS: <span id="scoreP1">0</span></div>
+            <div id="hudCombo">COMBO x<span id="comboVal">1</span></div>
+            <div id="hudTime" class="hud-center">00:00</div>
+            <div id="hudP2" class="hud-danger" style="display:none;">NET: <span id="scoreP2">0</span></div>
+        </div>
+        
+        <div id="sysMsg">SYSTEM ALERT</div>
+        <canvas id="gameCanvas" width="350" height="480"></canvas>
+        <div id="countdownDisplay">5</div>
+    </div>
+
+    <div id="endGameModal">
+        <h2>System Collapse</h2>
+        <div class="modal-stats">
+            <p>Final Rank: <span id="modalRank" class="rank-val">ROOKIE</span></p>
+            <p>Time Survived: <span id="modalTime" style="color: #fff;">00:00</span></p>
+            <p>Score Achieved: <span id="modalScore" style="color: #66fcf1;">0</span></p>
+            <p style="margin-top: 10px; font-size: 12px;">High Score: <span id="modalHighScore" class="high-score-val">0</span></p>
+        </div>
+        <div id="modalButtons"></div>
+    </div>
+
+    <script src="core.js"></script>
+</body>
+</html>

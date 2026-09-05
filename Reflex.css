@@ -1,0 +1,76 @@
+body {
+    margin: 0; padding: 0; background-color: #0b0c10; color: #66fcf1;
+    font-family: 'Courier New', Courier, monospace; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100vh; user-select: none; -webkit-user-select: none;
+}
+
+#mainMenu {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 50;
+    background-color: #0b0c10;
+}
+h1 { margin: 0 0 30px 0; font-size: 28px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 15px rgba(102, 252, 241, 0.8); text-align: center; }
+.menu-btn {
+    background: transparent; color: #66fcf1; border: 2px solid #66fcf1;
+    padding: 15px 40px; margin: 10px; font-size: 16px; cursor: pointer; text-transform: uppercase;
+    font-weight: bold; transition: all 0.1s; font-family: inherit; width: 260px;
+}
+.menu-btn:active { background-color: #66fcf1; color: #0b0c10; }
+.btn-danger { border-color: #ff0033; color: #ff0033; }
+.btn-danger:active { background-color: #ff0033; color: #0b0c10; }
+
+#gameContainer { display: none; width: 100%; height: 100%; flex-direction: column; align-items: center; position: relative; }
+
+#hudTop {
+    width: 95vw; max-width: 400px; display: flex; justify-content: space-between; font-size: 11px; color: #c5c6c7; margin-top: 10px; margin-bottom: 5px; font-weight: bold; text-transform: uppercase;
+}
+.high-score-val { color: #f2a900; text-shadow: 0 0 5px rgba(242, 169, 0, 0.5); }
+.rank-val { color: #fff; background: rgba(102, 252, 241, 0.2); padding: 2px 5px; border-radius: 3px; border: 1px solid #45a29e; }
+
+#hud {
+    width: 95vw; max-width: 400px; display: flex; justify-content: space-between; align-items: center;
+    padding: 5px 0 10px 0; font-size: 14px; font-weight: bold; z-index: 10;
+}
+.hud-center { text-align: center; color: #fff; font-size: 18px; }
+.hud-danger { color: #ff0033; text-align: right; flex: 1; }
+.hud-primary { color: #66fcf1; text-align: left; flex: 1; }
+#hudCombo { color: #f2a900; font-size: 12px; text-shadow: 0 0 8px rgba(242, 169, 0, 0.8); flex: 1; text-align: center; opacity: 0; transition: opacity 0.1s; }
+
+#sysMsg {
+    position: absolute; top: 18%; width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #c5c6c7;
+    pointer-events: none; opacity: 0; transition: opacity 0.1s; z-index: 15; text-shadow: 0 0 10px #c5c6c7;
+}
+
+canvas {
+    display: block; background-color: #12141a; box-shadow: 0 0 30px rgba(102, 252, 241, 0.1);
+    border: 1px solid #45a29e; border-radius: 4px; cursor: crosshair; max-width: 95vw; max-height: 75vh;
+}
+
+#countdownDisplay {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 120px; color: #66fcf1; text-shadow: 0 0 30px rgba(102, 252, 241, 0.8);
+    display: none; z-index: 20; pointer-events: none; margin: 0; font-weight: bold;
+}
+
+#endGameModal {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(11, 12, 16, 0.95); padding: 25px 20px; border: 2px solid #ff0033;
+    box-shadow: 0 0 40px rgba(255, 0, 51, 0.5); display: none; border-radius: 8px;
+    z-index: 30; text-align: center; flex-direction: column; width: 85%; max-width: 320px;
+}
+#endGameModal h2 { color: #ff0033; margin: 0 0 10px 0; font-size: 22px; text-transform: uppercase; }
+
+.modal-stats { background: rgba(0,0,0,0.5); padding: 15px; border-radius: 4px; margin-bottom: 20px; border: 1px solid #45a29e; }
+.modal-stats p { margin: 5px 0; font-size: 14px; color: #c5c6c7; }
+.modal-stats span { font-weight: bold; }
+
+.modal-btn {
+    background: transparent; border: 2px solid; padding: 12px 20px; margin: 8px 0;
+    font-size: 14px; cursor: pointer; text-transform: uppercase; font-weight: bold;
+    font-family: inherit; width: 100%; transition: all 0.1s;
+}
+.btn-action { color: #66fcf1; border-color: #66fcf1; }
+.btn-action:active { background: #66fcf1; color: #0b0c10; }
+.btn-exit { color: #c5c6c7; border-color: #45a29e; }
+.btn-exit:active { background: #45a29e; color: #0b0c10; }
